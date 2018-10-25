@@ -22,3 +22,9 @@ _testmain.go
 *.exe
 *.test
 *.prof
+
+
+docker-compose.yml
+Dockerfile
+nginx
+goget.sh
