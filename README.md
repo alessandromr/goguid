@@ -1,23 +1,23 @@
 # How to use this guid generator
 1. Import the package in go script
     ```
-        package main
-        import (
-        	"github.com/alessandromr/GoGuid/guid"
-        )
+package main
+import (
+	"github.com/alessandromr/GoGuid/guid"
+)
     ```
 2. Simple call the package in your function
-    ```
-        //...Function Code
-            guidutil.CreateToken()
-        //...Function Code
-    ```
-    OR
-    ```
-        //...Function Code
-           token := guidutil.CreateToken()
-        //...Function Code
-    ```
+```
+//...Function Code
+   token := guidutil.CreateToken()
+//...Function Code
+```
+Or use custom token format `(length int, timeFormat string)`
+```
+//...Function Code
+   token := guidutil.CreateCustomToken(256, "20060102150405.999999")
+//...Function Code
+```
 
 
 ## How Token is formed:
