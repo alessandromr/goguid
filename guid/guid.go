@@ -13,15 +13,21 @@ const nByte = 256
 
 //Main
 func CreateToken() string {
-	rnd := generateRnd()
-	curTime := encodeTime(getTime())
+	rnd := generateRnd(nByte)
+	curTime := encodeTime(getTime(shortForm))
+	return curTime + "__" + rnd
+}
+
+func CreateCustomToken(byteLen int, timeFormat string) string {
+	rnd := generateRnd(byteLen)
+	curTime := encodeTime(getTime(timeFormat))
 	return curTime + "__" + rnd
 }
 
 //Return current time in const shortForm format
-func getTime() string {
+func getTime(format string) string {
 	t := time.Now().UTC()
-	return t.Format(shortForm)
+	return t.Format(format)
 }
 
 //Encode UTC Time to a base64(URL Friendly) string
@@ -30,8 +36,8 @@ func encodeTime(curTime string) string {
 }
 
 //Generate random string and create a sha512 hash from it
-func generateRnd() string {
-	rnd, _ := GenerateRandomString(nByte)
+func generateRnd(byteLen int) string {
+	rnd, _ := GenerateRandomString(byteLen)
 	hasher := sha3.New512()
 	hasher.Write([]byte(rnd))
 	return base64.URLEncoding.EncodeToString(hasher.Sum(nil))
