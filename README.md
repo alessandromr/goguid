@@ -5,7 +5,7 @@
 ```golang
 package main
 import (
-	"github.com/alessandromr/GoGuid/goguid"
+	"github.com/alessandromr/goguid"
 )
 ```
 
@@ -13,7 +13,7 @@ import (
 
 ```golang
 //...Function Code
-   token := guidutil.CreateToken()
+   token := goguid.CreateToken()
 //...Function Code
 ```
 
@@ -21,7 +21,7 @@ Or use custom token format `(length int, timeFormat string)`
 
 ```golang
 //...Function Code
-   token := guidutil.CreateCustomToken(256, "20060102150405.999999")
+   token := goguid.CreateCustomToken(256, "20060102150405.999999")
 //...Function Code
 ```
 
