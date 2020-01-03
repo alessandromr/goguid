@@ -1,4 +1,4 @@
-package guidutil
+package goguid
 
 import (
 	"crypto/rand"

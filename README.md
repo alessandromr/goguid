@@ -5,7 +5,7 @@
 ```golang
 package main
 import (
-	"github.com/alessandromr/GoGuid/guid"
+	"github.com/alessandromr/GoGuid/goguid"
 )
 ```
 

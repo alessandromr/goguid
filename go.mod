@@ -1,4 +1,4 @@
-module github.com/alessandromr/GoGuid
+module github.com/alessandromr/goguid
 
 go 1.13
 
