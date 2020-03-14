@@ -4,8 +4,6 @@ import (
 	"crypto/rand"
 	"encoding/base64"
 	"time"
-
-	"golang.org/x/crypto/sha3"
 )
 
 const shortForm = "20060102150405.999"
@@ -35,12 +33,10 @@ func encodeTime(curTime string) string {
 	return base64.URLEncoding.EncodeToString([]byte(curTime))
 }
 
-//Generate random string and create a sha512 hash from it
+//Generate random string
 func generateRnd(byteLen int) string {
 	rnd, _ := GenerateRandomString(byteLen)
-	hasher := sha3.New512()
-	hasher.Write([]byte(rnd))
-	return base64.URLEncoding.EncodeToString(hasher.Sum(nil))
+	return base64.URLEncoding.EncodeToString([]byte(rnd))
 }
 
 // GenerateRandomBytes returns securely generated random bytes.

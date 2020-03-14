@@ -40,4 +40,9 @@ func TestCustomToken(t *testing.T) {
 		t.Errorf("Malformed Token")
 	}
 
+	if len(token) != (10 + len("20060102150405.999999")) {
+		log.Print(token)
+		t.Errorf("Not Expected Token Lenght")
+	}
+
 }
